@@ -1,0 +1,17 @@
+.bonjour {
+  width: 85%;
+  margin: 20px 250px;
+}
+
+.bonjour h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.bonjour strong {
+  color: #ff0101;
+}
+
+.bonjour p {
+  font-size: 18px;
+}

@@ -1,0 +1,28 @@
+.keyData {
+}
+
+.keyDataCard {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+  padding: 20px;
+  background-color: #fbfbfb;
+  margin: 40px;
+  width: 200px;
+}
+
+.keyDataCard img {
+  width: 60px;
+}
+
+.keyDataCard p {
+  margin: 2px;
+  font-size: 14px;
+  color: #74798c;
+}
+
+.keyDataCard .count {
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+}

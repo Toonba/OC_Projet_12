@@ -1,0 +1,41 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 117px;
+  height: 100vh;
+  background-color: black;
+  z-index: -1;
+  padding: 0 5px;
+}
+
+.picture {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 316px;
+  position: absolute;
+  top: 256px;
+}
+
+.picture img {
+  width: 64px;
+}
+
+footer .copyright {
+  position: absolute;
+  top: 620px;
+  writing-mode: vertical-rl;
+  transform: rotateZ(-180deg);
+  color: white;
+  font-size: 12px;
+}
+
+.spacing {
+  height: 20px;
+}
