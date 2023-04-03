@@ -29,23 +29,23 @@
 
 .legend {
   display: flex;
-  width: 269;
+  width: 320px;
   column-gap: 50px;
 }
 .legend p {
   margin: 0;
 }
 
-.legendPoids .fa-solid {
-  color: black;
+.legendContainer {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
 }
 
-.legendCalories .fa-solid {
-  color: #e60000;
+.fa-solid {
   font-size: 8px;
-  
-  
 }
+
 /* <div className="title-Legend">
         <h2 className="chartTitle">Activité quotidienne</h2>
         <div className="Legend">

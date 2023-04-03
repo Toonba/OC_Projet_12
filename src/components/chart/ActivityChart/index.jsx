@@ -11,8 +11,14 @@ function ActivityChart({ id }) {
       <div className="title-legend">
         <h2 className="chartTitle">Activité quotidienne</h2>
         <div className="legend">
-          <p className="legendePoids"> <i class="fa-solid fa-circle"></i> Poids (kg)</p>
-          <p className="legendCalories"> <i class="fa-solid fa-circle"></i> Calories brûlées (kCal)</p>
+          <div className="legendeContainer">
+            {' '}
+            <i className="fa-solid fa-circle"></i> <p className="legendePoids"> Poids (kg)</p>
+          </div>
+          <div className="legendContainer">
+            {' '}
+            <i className="fa-solid fa-circle"></i> <p className="legendCalories"> Calories brûlées (kCal)</p>
+          </div>
         </div>
       </div>
       <BarChart
