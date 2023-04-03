@@ -2,6 +2,7 @@
   background-color: #fbfbfb;
   height: 340px;
   position: relative;
+  border-radius: 5px;
 }
 
 .toolTip {
@@ -29,27 +30,42 @@
 
 .legend {
   display: flex;
+  align-items: center;
   width: 269;
   column-gap: 50px;
 }
 .legend p {
   margin: 0;
+  color: #74798c;
 }
 
-.legendPoids .fa-solid {
+.legend1,
+.legend2 {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.legend1 .fa-solid {
   color: black;
+  font-size: 8px;
 }
 
-.legendCalories .fa-solid {
+.legend2 .fa-solid {
   color: #e60000;
   font-size: 8px;
-  
-  
 }
-/* <div className="title-Legend">
-        <h2 className="chartTitle">Activité quotidienne</h2>
-        <div className="Legend">
-          <p className="legendePoids">Poids (kg)</p>
-          <p className="legendCalories">Calories brûlées (kCal)</p>
+
+/* <div className="title-legend"> */
+/* <h2 className="chartTitle">Activité quotidienne</h2>
+        <div className="legend">
+          <div className='legend1'>
+            <i className="fa-solid fa-circle"></i>
+            <p className="legendePoids">Poids (kg)</p>
+          </div>
+          <div className='legend2'>
+            <i class="fa-solid fa-circle"></i>
+            <p className="legendCalories">Calories brûlées (kCal)</p>
+          </div>
         </div>
       </div> */

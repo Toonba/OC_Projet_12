@@ -4,6 +4,8 @@ import '../../styles/dashboard.css'
 import KeyData from '../../components/KeyData'
 import ActivityChart from '../../components/chart/ActivityChart'
 import React from 'react'
+import TrainingTimeChart from '../../components/chart/TrainingTimeChart'
+import PerformanceChart from '../../components/chart/PerformanceChart'
 
 function Dashboard() {
   const { id } = useParams()
@@ -17,8 +19,12 @@ function Dashboard() {
         </h1>
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </section>
-      <section className='dashboardData'>
-        <ActivityChart id={id} />
+      <section className="dashboardData">
+        <article className="dashboardChart">
+          <ActivityChart id={id} />
+          <TrainingTimeChart id={id} />
+          <PerformanceChart id={id}/>
+        </article>
         <KeyData id={id} />
       </section>
     </React.Fragment>

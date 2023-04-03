@@ -1,0 +1,25 @@
+.trainingTimeChart {
+  background-color: #ff0000;
+  width: 260px;
+  position: relative;
+  opacity: 0.9;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.chartTitle {
+  position: absolute;
+  top: 29px;
+  left: 34px;
+  width: 147px;
+  color: #ffffff;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.trainingTimeChart .toolTip {
+  background-color: white;
+  color: black;
+  padding: 0;
+  margin: 0;
+}
