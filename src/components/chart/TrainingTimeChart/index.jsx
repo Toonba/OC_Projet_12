@@ -12,7 +12,7 @@ function TrainingTimeChart({ id }) {
     <aside className="trainingTimeChart">
       <h2 className="chartTitle">Durée moyenne des sessions</h2>
 
-      <LineChart width={260} height={250} data={userData[0].sessions} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+      <LineChart width={250} height={230} data={userData[0].sessions} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
         <CartesianGrid horizontal={false} vertical={false} />
         <XAxis dataKey="day" tick={{ fill: '#FFFFFF', dx: 20 }} tickLine={false} axisLine={false} tickMargin={0} tickFormatter={formattedDay} padding={{ left: -15, right: 0 }} />
         <YAxis hide domain={['dataMin-10', 'dataMax+20']} />
