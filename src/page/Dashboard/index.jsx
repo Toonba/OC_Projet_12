@@ -6,6 +6,7 @@ import ActivityChart from '../../components/chart/ActivityChart'
 import React from 'react'
 import TrainingTimeChart from '../../components/chart/TrainingTimeChart'
 import PerformanceChart from '../../components/chart/PerformanceChart'
+import ScoreChart from '../../components/chart/ScoreChart'
 
 function Dashboard() {
   const { id } = useParams()
@@ -23,7 +24,8 @@ function Dashboard() {
         <article className="dashboardChart">
           <ActivityChart id={id} />
           <TrainingTimeChart id={id} />
-          <PerformanceChart id={id}/>
+          <PerformanceChart id={id} />
+          <ScoreChart id={id} />
         </article>
         <KeyData id={id} />
       </section>

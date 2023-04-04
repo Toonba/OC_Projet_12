@@ -23,7 +23,7 @@ function ActivityChart({ id }) {
       </div>
       <BarChart
         barGap={8}
-        width={835}
+        width={840}
         height={300}
         data={userData[0].sessions}
         margin={{
