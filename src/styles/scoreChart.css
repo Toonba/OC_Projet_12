@@ -14,7 +14,7 @@
   margin: 0;
 }
 
-.recharts-surface {
+.scoreChart .recharts-surface {
   width: 200;
   height: 200px;
 }
