@@ -1,7 +1,12 @@
 import { BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Bar } from 'recharts'
 import CustomToolTip from './tooltip'
 import '../../../styles/activityChart.css'
+import PropTypes from 'prop-types'
 
+/**
+ * @param {object} data activity data of user
+ * @return {reactElement} barChart of daily activity
+ */
 function ActivityChart({ data }) {
   const userData = data
 
@@ -47,6 +52,11 @@ function ActivityChart({ data }) {
       </BarChart>
     </aside>
   )
+}
+
+
+ActivityChart.propTypes = {
+  data: PropTypes.object.isRequired
 }
 
 export default ActivityChart

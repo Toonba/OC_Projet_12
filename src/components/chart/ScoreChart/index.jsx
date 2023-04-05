@@ -1,6 +1,12 @@
 import { PieChart, Pie, Cell } from 'recharts'
-
 import '../../../styles/scoreChart.css'
+import PropTypes from 'prop-types'
+
+/**
+ *
+ * @param {object} data main datat of user, contain his current score
+ * @returns piechart of current user score
+ */
 
 function ScoreChart({ data }) {
   const userData = data
@@ -29,6 +35,9 @@ function ScoreChart({ data }) {
       </PieChart>
     </aside>
   )
+}
+ScoreChart.propTypes = {
+  data: PropTypes.object.isRequired
 }
 
 export default ScoreChart

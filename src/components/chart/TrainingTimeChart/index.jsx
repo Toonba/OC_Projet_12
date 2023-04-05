@@ -1,6 +1,12 @@
 import { LineChart, XAxis, YAxis, CartesianGrid, Tooltip, Line } from 'recharts'
 import { CustomToolTip, CustomHover } from './tooltip'
 import '../../../styles/trainingTimeChart.css'
+import PropTypes from 'prop-types'
+
+/**
+ * @param {object} data data of user average session
+ * @returns line chart of average duration of sessions
+ */
 
 function TrainingTimeChart({ data }) {
   const userData = data
@@ -33,6 +39,10 @@ function TrainingTimeChart({ data }) {
       </LineChart>
     </aside>
   )
+}
+
+TrainingTimeChart.propTypes = {
+  data: PropTypes.object.isRequired
 }
 
 export default TrainingTimeChart

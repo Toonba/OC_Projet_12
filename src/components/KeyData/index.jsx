@@ -5,8 +5,7 @@ import protein from '../../assets/protein-icon.png'
 import KeyDataCard from '../KeyDataCard'
 
 function KeyData({ data }) {
-  const userData = data
-  const keyData = userData.keyData
+  const keyData = data.keyData
   let logo = ''
   let count = ''
   let countName = ''

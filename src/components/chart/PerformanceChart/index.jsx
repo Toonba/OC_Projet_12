@@ -1,5 +1,12 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts'
 import '../../../styles/performanceChart.css'
+import PropTypes from 'prop-types'
+
+/**
+ *
+ * @param {object} data data of user performance
+ * @returns radar chart of user performance
+ */
 
 function PerformanceChart({ data }) {
   const userData = data
@@ -16,6 +23,10 @@ function PerformanceChart({ data }) {
       </RadarChart>
     </aside>
   )
+}
+
+PerformanceChart.propTypes = {
+  data: PropTypes.object.isRequired
 }
 
 export default PerformanceChart
