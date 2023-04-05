@@ -11,6 +11,12 @@ function Home() {
         <h2>User 18</h2>
       </Link>
     </div>
+    // <section className="makeYourChoice">
+    // <div className="useApi">
+    //   <h2>Use API:</h2>
+    //  <input type="checkbox" checked={useApi} onChange={handleCheckboxChange} />
+
+    // </section>
   )
 }
 

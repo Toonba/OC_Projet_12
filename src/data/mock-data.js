@@ -21,15 +21,14 @@ const USER_MAIN_DATA = [
       lastName: 'Ratorez',
       age: 34
     },
-    score: 0.3,
+    todayScore: 0.3,
     keyData: {
       calorieCount: 2500,
       proteinCount: 90,
       carbohydrateCount: 150,
       lipidCount: 120
     }
-  },
-  { coucou: 'coucou' }
+  }
 ]
 
 const USER_ACTIVITY = [
@@ -188,12 +187,12 @@ const USER_PERFORMANCE = [
   {
     userId: 12,
     kind: {
-      1: 'cardio',
-      2: 'energy',
-      3: 'endurance',
-      4: 'strength',
-      5: 'speed',
-      6: 'intensity'
+      1: 'Cardio',
+      2: 'Energie',
+      3: 'Endurance',
+      4: 'Force',
+      5: 'Vitesse',
+      6: 'Intensité'
     },
     data: [
       {
@@ -225,12 +224,12 @@ const USER_PERFORMANCE = [
   {
     userId: 18,
     kind: {
-      1: 'cardio',
-      2: 'energy',
-      3: 'endurance',
-      4: 'strength',
-      5: 'speed',
-      6: 'intensity'
+      1: 'Cardio',
+      2: 'Energie',
+      3: 'Endurance',
+      4: 'Force',
+      5: 'Vitesse',
+      6: 'Intensité'
     },
     data: [
       {

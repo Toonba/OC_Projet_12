@@ -1,31 +1,30 @@
-import { BarChart, XAxis, YAxis, ReferenceArea, ReferenceDot, ReferenceLine, Brush, CartesianGrid, Legend, Tooltip, Bar, Customized } from 'recharts'
-import { USER_ACTIVITY } from '../../../data/mock-data'
+import { BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Bar } from 'recharts'
 import CustomToolTip from './tooltip'
 import '../../../styles/activityChart.css'
 
-function ActivityChart({ id }) {
-  const userData = USER_ACTIVITY.filter((element) => element.userId === parseInt(id))
+function ActivityChart({ data }) {
+  const userData = data
 
   return (
-    <article className="activityChart">
+    <aside className="activityChart">
       <div className="title-legend">
         <h2 className="chartTitle">Activité quotidienne</h2>
         <div className="legend">
-          <div className="legendeContainer">
-            {' '}
-            <i className="fa-solid fa-circle"></i> <p className="legendePoids"> Poids (kg)</p>
+          <div className="legend1">
+            <i className="fa-solid fa-circle"></i>
+            <p className="legendePoids">Poids (kg)</p>
           </div>
-          <div className="legendContainer">
-            {' '}
-            <i className="fa-solid fa-circle"></i> <p className="legendCalories"> Calories brûlées (kCal)</p>
+          <div className="legend2">
+            <i className="fa-solid fa-circle"></i>
+            <p className="legendCalories">Calories brûlées (kCal)</p>
           </div>
         </div>
       </div>
       <BarChart
         barGap={8}
-        width={835}
-        height={320}
-        data={userData[0].sessions}
+        width={840}
+        height={300}
+        data={userData.sessions}
         margin={{
           top: 100,
           right: 30,
@@ -42,25 +41,11 @@ function ActivityChart({ id }) {
 
         <Tooltip content={<CustomToolTip />} wrapperStyle={{ backgroundColor: '#FFF', boxShadow: 'none', margin: '0 20px' }} />
 
-        {/* <Legend
-          className="legend"
-          verticalAlign="top"
-          align="right"
-          iconType="circle"
-          iconSize="10"
-          height={80}
-          payload={[
-            { value: 'Poids (kg)', type: '', id: 'kilogram', color: '#282D30' },
-            { value: 'Calories brûlées (kCal)', type: 'circle', id: 'calories', color: '#E60000' }
-          ]}
-          wrapperStyle={{ top: 20, color: 'red' }}
-        /> */}
-
         <Bar dataKey="kilogram" yAxisId={'kilogram'} fill="#282D30" barSize={7} radius={[3.5, 3.5, 0, 0]} />
 
         <Bar dataKey="calories" yAxisId={'calories'} fill="#E60000" barSize={7} radius={[3.5, 3.5, 0, 0]} />
       </BarChart>
-    </article>
+    </aside>
   )
 }
 

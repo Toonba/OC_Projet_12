@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   column-gap: 50px;
-  margin: 250px auto;
 }
 
 .userChoice a {

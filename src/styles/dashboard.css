@@ -1,5 +1,5 @@
 .bonjour {
-  width: 85%;
+  width: 80%;
   margin: 20px 250px;
 }
 
@@ -22,4 +22,11 @@
   align-items: flex-start;
 }
 
-
+.dashboardChart {
+  width: 840px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 20px;
+  row-gap: 20px;
+}

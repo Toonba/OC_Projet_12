@@ -29,7 +29,7 @@ footer {
 
 footer .copyright {
   position: absolute;
-  top: 620px;
+  top: 670px;
   writing-mode: vertical-rl;
   transform: rotateZ(-180deg);
   color: white;

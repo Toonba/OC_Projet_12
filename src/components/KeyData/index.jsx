@@ -3,11 +3,10 @@ import carbs from '../../assets/carbs-icon.png'
 import fat from '../../assets/fat-icon.png'
 import protein from '../../assets/protein-icon.png'
 import KeyDataCard from '../KeyDataCard'
-import { USER_MAIN_DATA } from '../../data/mock-data'
 
-function KeyData({ id }) {
-  const userData = USER_MAIN_DATA.filter((element) => element.id === parseInt(id))
-  const keyData = userData[0].keyData
+function KeyData({ data }) {
+  const userData = data
+  const keyData = userData.keyData
   let logo = ''
   let count = ''
   let countName = ''
