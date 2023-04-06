@@ -9,24 +9,19 @@ import PropTypes from 'prop-types'
  */
 
 function ScoreChart({ data }) {
-  const scoreData = [
-    { name: 'score', value: data },
-    { name: 'empty', value: 1 - data }
-  ]
-
   return (
     <aside className="scoreChart">
       <h2>Score</h2>
       <div className="scoreLegend">
         <p>
-          <strong>{`${data * 100}%`}</strong>
+          <strong>{`${data[0].value * 100}%`}</strong>
           <br />
           de votre <br /> obectif
         </p>
       </div>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
-          <Pie data={scoreData} startAngle={90} endAngle={450} innerRadius={20} outerRadius={63} cornerRadius={10} dataKey="value">
+          <Pie data={data} startAngle={90} endAngle={450} innerRadius={20} outerRadius={63} cornerRadius={10} dataKey="value">
             <Cell fill={'#e60000'} />
             <Cell fill={'transparent'} stroke={'transparent'} />
           </Pie>
@@ -37,7 +32,7 @@ function ScoreChart({ data }) {
   )
 }
 ScoreChart.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.array.isRequired
 }
 
 export default ScoreChart

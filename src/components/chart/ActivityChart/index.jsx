@@ -40,7 +40,7 @@ function ActivityChart({ data }) {
           }}>
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
 
-          <XAxis dataKey="day" tickFormatter={(day) => new Date(day).getDate()} tickLine={false} tick={{ fill: '#9B9EAC' }} padding={{ left: -47, right: -48 }} domain={['dataMin', 'dataMax']} tickMargin={10} />
+          <XAxis dataKey="day" tickLine={false} tick={{ fill: '#9B9EAC' }} padding={{ left: -47, right: -48 }} domain={['dataMin', 'dataMax']} tickMargin={10} />
 
           <YAxis dataKey="kilogram" yAxisId="kilogram" orientation="right" tickLine={false} tick={{ fill: '#9B9EAC' }} axisLine={false} tickMargin={30} domain={['dataMin-2', 'dataMax+2']} tickCount={4} />
 
@@ -58,7 +58,7 @@ function ActivityChart({ data }) {
 }
 
 ActivityChart.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.array.isRequired
 }
 
 export default ActivityChart

@@ -21,7 +21,7 @@ const USER_MAIN_DATA = [
       lastName: 'Ratorez',
       age: 34
     },
-    todayScore: 0.3,
+    score: 0.3,
     keyData: {
       calorieCount: 2500,
       proteinCount: 90,
@@ -187,12 +187,12 @@ const USER_PERFORMANCE = [
   {
     userId: 12,
     kind: {
-      1: 'Cardio',
-      2: 'Energie',
-      3: 'Endurance',
-      4: 'Force',
-      5: 'Vitesse',
-      6: 'Intensité'
+      1: 'cardio',
+      2: 'energy',
+      3: 'endurance',
+      4: 'strength',
+      5: 'speed',
+      6: 'intensity'
     },
     data: [
       {

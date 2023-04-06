@@ -1,3 +1,8 @@
+import calories from '../assets/calories-icon.png'
+import carbs from '../assets/carbs-icon.png'
+import fat from '../assets/fat-icon.png'
+import protein from '../assets/protein-icon.png'
+
 /**
  * Represents the main data of a user.
  * Creates a new instance of UserMainData.
@@ -26,11 +31,43 @@ export class User {
 
   /**
    *
-   * @returns {object} User's nutriment count
+   * @returns {Array} User's nutriment count linked to a logo and nutriment name
    */
 
   getKeyData() {
-    return this.mainData.keyData
+    let data = this.mainData.keyData
+    let logo = ''
+    let count = ''
+    let countName = ''
+    let keyData = []
+
+    for (const value in data) {
+      //convert original number in US format (ie 1000 = 1,000)
+      count = `${new Intl.NumberFormat('en-US').format(data[value])}kCal`
+      // link each type of nutriment to logo and name
+      switch (value) {
+        case 'calorieCount':
+          logo = calories
+          countName = 'Calories'
+          break
+        case 'proteinCount':
+          logo = protein
+          countName = 'Proteines'
+          break
+        case 'carbohydrateCount':
+          logo = carbs
+          countName = 'Glucides'
+          break
+        case 'lipidCount':
+          logo = fat
+          countName = 'Lipides'
+          break
+        default:
+          console.log(`Sorry, we are out of data.`)
+      }
+      keyData.push({ logo, count, countName })
+    }
+    return keyData
   }
 
   /**
@@ -39,46 +76,80 @@ export class User {
    */
 
   getActivityData() {
-    return this.activityData.sessions
+    let sessions = []
+    for (let session of this.activityData.sessions) {
+      sessions.push({
+        day: new Date(session.day).getDate(),
+        kilogram: session.kilogram,
+        calories: session.calories
+      })
+    }
+    return sessions
   }
 
   /**
    *
-   * @returns {Array} user's daily session length
+   * @returns {Array} user's daily session length with day of the week converted from number to letter
    */
 
   getTrainingData() {
-    return this.sessionData.sessions
+    const dayOfWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' }
+    let sessions = []
+    for (let session of this.sessionData.sessions) {
+      sessions.push({ day: dayOfWeek[session.day], sessionLength: session.sessionLength })
+    }
+    return sessions
   }
 
   /**
    *
-   * @returns {object} kind of skill translated in french and user's score for each skill
-   *  /!\ If kind ar missmatched data will be broken
+   * @returns {Array} user's performance score for each kinds of skills
    */
 
   getPerformanceData() {
-    let performance = {
-      kind: {
-        1: 'Cardio',
-        2: 'Energie',
-        3: 'Endurance',
-        4: 'Force',
-        5: 'Vitesse',
-        6: 'Intensité'
-      },
-      data: this.performanceData.data
+    const kind = this.performanceData.kind
+    for (const value in kind) {
+      // transalte each kind in French 
+      switch (kind[value]) {
+        case 'cardio':
+          kind[value] = 'Cardio'
+          break
+        case 'energy':
+          kind[value] = 'Energie'
+          break
+        case 'endurance':
+          kind[value] = 'Endurance'
+          break
+        case 'strength':
+          kind[value] = 'Force'
+          break
+        case 'speed':
+          kind[value] = 'Vitesse'
+          break
+        case 'intensity':
+          kind[value] = 'Intensité'
+          break
+        default:
+          console.log(`Sorry, we are out of data.`)
+      }
     }
-    return performance
+    let performances = []
+    for (let performance of this.performanceData.data) {
+      performances.push({ value: performance.value, kind: kind[performance.kind] })
+    }
+    return performances
   }
 
   /**
    *
-   * @returns {number} Current user's score
+   * @returns {Array} containing Current user's score and how many point left to reach maximum score
    */
 
   getScore() {
-    let score = this.mainData.todayScore ? this.mainData.todayScore : this.mainData.score
-    return score
+    const scoreData = [
+      { name: 'score', value: this.mainData.todayScore ? this.mainData.todayScore : this.mainData.score },
+      { name: 'empty', value: 1 - (this.mainData.todayScore ? this.mainData.todayScore : this.mainData.score) }
+    ]
+    return scoreData
   }
 }

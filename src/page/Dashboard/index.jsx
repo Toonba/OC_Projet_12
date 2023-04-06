@@ -11,7 +11,7 @@ import { getMainData, getActivityData, getSessionData, getPerformanceData } from
 import { User } from '../../service/user'
 
 /**
- * 
+ *
  * @returns {React.Component} dashboard with user's data
  */
 
@@ -19,7 +19,7 @@ function Dashboard() {
   const { id } = useParams()
   const [data, setData] = useState(null)
   // set useAPI to false if you want to use mocked data
-  const useAPI = true
+  const useAPI = false
 
   useEffect(() => {
     // Retrieve data from API or mocked-data depending of useApi value
