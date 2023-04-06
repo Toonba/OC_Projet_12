@@ -96,6 +96,7 @@ export class User {
     const dayOfWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' }
     let sessions = []
     for (let session of this.sessionData.sessions) {
+      // convert each day from number to letter 
       sessions.push({ day: dayOfWeek[session.day], sessionLength: session.sessionLength })
     }
     return sessions

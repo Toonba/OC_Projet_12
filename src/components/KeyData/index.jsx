@@ -2,7 +2,7 @@ import KeyDataCard from '../KeyDataCard'
 import PropTypes from 'prop-types'
 
 /**
- * @param {object} data user's key data representing several nutriment and their count
+ * @param {Array} data user's key data representing nutriment with logo, name and count
  * @returns {React.Component}  where key data of user will be displayed
  */
 

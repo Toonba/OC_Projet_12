@@ -6,11 +6,10 @@ import React from 'react'
 
 /**
  *
- * @param {object} data activity data of user
- * @return {React.Component} barChart of user's daily activities and weight
+ * @param {Array} data user's calorie burnt and user's weight for each day 
+ * @return {React.Component} barChart of user's daily calories burnt and weight
  */
 function ActivityChart({ data }) {
-
   return (
     <aside className="activityChart">
       <div className="title-legend">
@@ -26,10 +25,11 @@ function ActivityChart({ data }) {
           </div>
         </div>
       </div>
+
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           barGap={8}
-          width={840}
+          width={500}
           height={300}
           data={data}
           margin={{
@@ -40,7 +40,7 @@ function ActivityChart({ data }) {
           }}>
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
 
-          <XAxis dataKey="day" tickLine={false} tick={{ fill: '#9B9EAC' }} padding={{ left: -47, right: -48 }} domain={['dataMin', 'dataMax']} tickMargin={10} />
+          <XAxis dataKey="day" tickLine={false} tick={{ fill: '#9B9EAC' }} padding={{ left: -30, right: -30 }} domain={['dataMin', 'dataMax']} tickMargin={10} />
 
           <YAxis dataKey="kilogram" yAxisId="kilogram" orientation="right" tickLine={false} tick={{ fill: '#9B9EAC' }} axisLine={false} tickMargin={30} domain={['dataMin-2', 'dataMax+2']} tickCount={4} />
 

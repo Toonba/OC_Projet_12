@@ -10,8 +10,8 @@ import '../../styles/header.css'
 function Header() {
   return (
     <header>
-      <nav>
         <img src={logo} alt="logo sportsee" />
+      <nav>
         <Link to="/">Accueil</Link>
         <Link to="/">Profil</Link>
         <Link to="/">Réglage</Link>

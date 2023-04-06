@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 /**
  *
- * @param {object} data main datat of user, contain his current score
+ * @param {Array} data curent user score and point left to reach maximum 
  * @returns piechart of current user score
  */
 
@@ -20,12 +20,17 @@ function ScoreChart({ data }) {
         </p>
       </div>
       <ResponsiveContainer width="100%" height="100%">
-        <PieChart>
-          <Pie data={data} startAngle={90} endAngle={450} innerRadius={20} outerRadius={63} cornerRadius={10} dataKey="value">
+        <PieChart margin={{
+            top: 20,
+            right: 0,
+            left: 0,
+            bottom: 0
+          }}>
+          <Pie data={data} startAngle={90} endAngle={450} innerRadius={20} outerRadius={73} cornerRadius={10} dataKey="value">
             <Cell fill={'#e60000'} />
             <Cell fill={'transparent'} stroke={'transparent'} />
           </Pie>
-          <Pie outerRadius={50} fill={'#FFFFFF'} data={[{ name: 'background', value: 100 }]} dataKey="value" />
+          <Pie outerRadius={60} fill={'#FFFFFF'} data={[{ name: 'background', value: 100 }]} dataKey="value" />
         </PieChart>
       </ResponsiveContainer>
     </aside>

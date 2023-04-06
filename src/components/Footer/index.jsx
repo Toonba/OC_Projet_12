@@ -5,7 +5,7 @@ import halter from '../../assets/haltere.png'
 import '../../styles/footer.css'
 
 /**
- * 
+ *
  * @returns {React.Component} with several logo and copyright text
  */
 
@@ -18,7 +18,7 @@ function Footer() {
         <img src={velo} alt="logo velo" />
         <img src={halter} alt="logo halter" />
       </div>
-      <span className="copyright">Copyright, SportSee 2020</span>
+      <p className="copyright">Copyright, SportSee 2020</p>
     </footer>
   )
 }

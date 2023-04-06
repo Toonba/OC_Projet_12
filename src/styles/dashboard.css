@@ -1,6 +1,5 @@
 .bonjour {
-  width: 80%;
-  margin: 20px 0 0 200px;
+  margin: 20px 0 0 15vw;
 }
 
 .bonjour h1 {
@@ -19,8 +18,8 @@
 .dashboardData {
   display: flex;
   width: 70%;
-  margin-left: 200px;
-  column-gap: 10px;
+  margin: 0 0 0 15vw;
+  column-gap: 50px;
   align-items: flex-start;
 }
 
@@ -29,6 +28,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  column-gap: 20px;
+  column-gap: 5px;
   row-gap: 20px;
 }

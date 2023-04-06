@@ -4,7 +4,7 @@ import '../../../styles/trainingTimeChart.css'
 import PropTypes from 'prop-types'
 
 /**
- * @param {object} data data of user average session
+ * @param {Array} data user's average session length
  * @returns line chart of average duration of sessions
  */
 

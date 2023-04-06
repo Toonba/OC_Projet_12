@@ -16,7 +16,7 @@ export async function fetchData(url) {
  *
  * @param {number} userId used in url to specify from which user we want data
  * @param {boolean} useAPI if true use API if not use mocked data
- * @returns mainData of user either via API or mocked data, if coming from API they are formated
+ * @returns mainData of user either via API or mocked data
  */
 
 export async function getMainData(userId, useAPI) {
@@ -32,7 +32,7 @@ export async function getMainData(userId, useAPI) {
  *
  * @param {number} userId used in url to specify from which user we want data
  * @param {boolean} useAPI if true use API if not use mocked data
- * @returns activityData of user either via API or mocked data, if coming from API they are formated
+ * @returns activityData of user either via API or mocked data
  */
 
 export async function getActivityData(userId, useAPI) {
@@ -48,7 +48,7 @@ export async function getActivityData(userId, useAPI) {
  *
  * @param {number} userId used in url to specify from which user we want data
  * @param {boolean} useAPI if true use API if not use mocked data
- * @returns sessionData of user either via API or mocked data, if coming from API they are formated
+ * @returns sessionData of user either via API or mocked data
  */
 
 export async function getSessionData(userId, useAPI) {
@@ -64,7 +64,7 @@ export async function getSessionData(userId, useAPI) {
  *
  * @param {number} userId used in url to specify from which user we want data
  * @param {boolean} useAPI if true use API if not use mocked data
- * @returns performanceData of user either via API or mocked data, if coming from API they are formated
+ * @returns performanceData of user either via API or mocked data
  */
 
 export async function getPerformanceData(userId, useAPI) {

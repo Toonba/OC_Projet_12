@@ -1,41 +1,27 @@
 footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
-  width: 117px;
+  width: 7vw;
   height: 100%;
   background-color: black;
   z-index: -1;
-  padding: 0 5px;
 }
 
 .picture {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 316px;
-  position: absolute;
-  top: 200px;
+  width: 5vw;
+  margin: 200px 1vw 0;
 }
 
 .picture img {
-  width: 64px;
+  width: 100%;
+  margin: 10px 0;
 }
 
 footer .copyright {
-  position: absolute;
-  top: 550px;
   writing-mode: vertical-rl;
   transform: rotateZ(-180deg);
   color: white;
   font-size: 12px;
-}
-
-.spacing {
-  height: 20px;
+  margin: 72px 0 0 40%;
 }
