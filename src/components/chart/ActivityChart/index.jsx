@@ -10,7 +10,6 @@ import React from 'react'
  * @return {React.Component} barChart of user's daily activities and weight
  */
 function ActivityChart({ data }) {
-  const userData = data
 
   return (
     <aside className="activityChart">
@@ -32,7 +31,7 @@ function ActivityChart({ data }) {
           barGap={8}
           width={840}
           height={300}
-          data={userData.sessions}
+          data={data}
           margin={{
             top: 100,
             right: 30,

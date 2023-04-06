@@ -9,7 +9,6 @@ import PropTypes from 'prop-types'
  */
 
 function TrainingTimeChart({ data }) {
-  const userData = data
   const dayOfWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' }
   const formattedDay = (day) => dayOfWeek[day]
 
@@ -17,7 +16,7 @@ function TrainingTimeChart({ data }) {
     <aside className="trainingTimeChart">
       <h2 className="chartTitle">Durée moyenne des sessions</h2>
       <ResponsiveContainer width="100%" height="100%">
-      <LineChart width={260} height={230} data={userData.sessions} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+      <LineChart width={260} height={230} data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
         <CartesianGrid horizontal={false} vertical={false} />
         <XAxis dataKey="day" tick={{ fill: '#FFFFFF', dx: 20 }} tickLine={false} axisLine={false} tickMargin={0} tickFormatter={formattedDay} padding={{ left: -15, right: 0 }} />
         <YAxis hide domain={['dataMin-10', 'dataMax+20']} />

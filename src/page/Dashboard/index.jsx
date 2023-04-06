@@ -8,6 +8,7 @@ import TrainingTimeChart from '../../components/chart/TrainingTimeChart'
 import PerformanceChart from '../../components/chart/PerformanceChart'
 import ScoreChart from '../../components/chart/ScoreChart'
 import { getMainData, getActivityData, getSessionData, getPerformanceData } from '../../service/fetch'
+import { User } from '../../service/user'
 
 /**
  * 
@@ -24,10 +25,11 @@ function Dashboard() {
     // Retrieve data from API or mocked-data depending of useApi value
     async function fetchData() {
       const mainData = await getMainData(id, useAPI)
-      const activtyData = await getActivityData(id, useAPI)
+      const activityData = await getActivityData(id, useAPI)
       const sessionData = await getSessionData(id, useAPI)
       const performanceData = await getPerformanceData(id, useAPI)
-      setData({ mainData, activtyData, sessionData, performanceData })
+      const user = new User(mainData, activityData, sessionData, performanceData)
+      setData(user)
     }
     fetchData()
   }, [id, useAPI])
@@ -40,18 +42,18 @@ function Dashboard() {
     <React.Fragment>
       <section className="bonjour">
         <h1>
-          Bonjour <strong>{data.mainData.userInfos.firstName}</strong>
+          Bonjour <strong>{data.getFirstName()}</strong>
         </h1>
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </section>
       <section className="dashboardData">
         <article className="dashboardChart">
-          <ActivityChart data={data.activtyData} />
-          <TrainingTimeChart data={data.sessionData} />
-          <PerformanceChart data={data.performanceData} />
-          <ScoreChart data={data.mainData} />
+          <ActivityChart data={data.getActivityData()} />
+          <TrainingTimeChart data={data.getTrainingData()} />
+          <PerformanceChart data={data.getPerformanceData()} />
+          <ScoreChart data={data.getScore()} />
         </article>
-        <KeyData data={data.mainData} />
+        <KeyData data={data.getKeyData()} />
       </section>
     </React.Fragment>
   )

@@ -1,63 +1,3 @@
-export function formatedMainData(mainData) {
-  const newMainData = {
-    id: mainData.id,
-    userInfos: {
-      firstName: mainData.userInfos.firstName,
-      lastName: mainData.userInfos.lastName,
-      age: mainData.userInfos.age
-    },
-    todayScore: mainData.todayScore ? mainData.todayScore : mainData.score,
-    keyData: {
-      calorieCount: mainData.keyData.calorieCount,
-      proteinCount: mainData.keyData.proteinCount,
-      carbohydrateCount: mainData.keyData.carbohydrateCount,
-      lipidCount: mainData.keyData.lipidCount
-    }
-  }
-  return newMainData
-}
-
-export function formatedPerformanceData(performanceData) {
-  const newPerformanceData = {
-    userId: performanceData.userId,
-    kind: {
-      1: 'Cardio',
-      2: 'Energie',
-      3: 'Endurance',
-      4: 'Force',
-      5: 'Vitesse',
-      6: 'Intensité'
-    },
-    data: [
-      {
-        value: performanceData.data[0].value,
-        kind: 1
-      },
-      {
-        value: performanceData.data[1].value,
-        kind: 2
-      },
-      {
-        value: performanceData.data[2].value,
-        kind: 3
-      },
-      {
-        value: performanceData.data[3].value,
-        kind: 4
-      },
-      {
-        value: performanceData.data[4].value,
-        kind: 5
-      },
-      {
-        value: performanceData.data[5].value,
-        kind: 6
-      }
-    ]
-  }
-  return newPerformanceData
-}
-
 /**
  * Represents the main data of a user.
  * Creates a new instance of UserMainData.
@@ -75,21 +15,47 @@ export class User {
     this.performanceData = performanceData
   }
 
+  /**
+   *
+   * @returns {string} user's First Name
+   */
+
   getFirstName() {
     return this.mainData.userInfos.firstName
   }
+
+  /**
+   *
+   * @returns {object} User's nutriment count
+   */
 
   getKeyData() {
     return this.mainData.keyData
   }
 
+  /**
+   *
+   * @returns {Array} User's daily calorie burnt and weight
+   */
+
   getActivityData() {
     return this.activityData.sessions
   }
 
+  /**
+   *
+   * @returns {Array} user's daily session length
+   */
+
   getTrainingData() {
     return this.sessionData.sessions
   }
+
+  /**
+   *
+   * @returns {object} kind of skill translated in french and user's score for each skill
+   *  /!\ If kind ar missmatched data will be broken
+   */
 
   getPerformanceData() {
     let performance = {
@@ -105,6 +71,11 @@ export class User {
     }
     return performance
   }
+
+  /**
+   *
+   * @returns {number} Current user's score
+   */
 
   getScore() {
     let score = this.mainData.todayScore ? this.mainData.todayScore : this.mainData.score

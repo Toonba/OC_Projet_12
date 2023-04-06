@@ -9,11 +9,9 @@ import PropTypes from 'prop-types'
  */
 
 function ScoreChart({ data }) {
-  const userData = data
-  console.log(data)
   const scoreData = [
-    { name: 'score', value: userData.todayScore },
-    { name: 'empty', value: 1 - userData.todayScore }
+    { name: 'score', value: data },
+    { name: 'empty', value: 1 - data }
   ]
 
   return (
@@ -21,7 +19,7 @@ function ScoreChart({ data }) {
       <h2>Score</h2>
       <div className="scoreLegend">
         <p>
-          <strong>{`${userData.todayScore * 100}%`}</strong>
+          <strong>{`${data * 100}%`}</strong>
           <br />
           de votre <br /> obectif
         </p>

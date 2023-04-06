@@ -1,10 +1,9 @@
 import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from '../data/mock-data'
-import { formatedMainData, formatedPerformanceData, UserMainData } from './user'
 
 /**
- * 
- * @param {string} url url to reach API 
- * @returns data from API 
+ *
+ * @param {string} url url to reach API
+ * @returns data from API
  */
 
 export async function fetchData(url) {
@@ -14,27 +13,26 @@ export async function fetchData(url) {
 }
 
 /**
- * 
- * @param {number} userId used in url to specify from which user we want data 
- * @param {boolean} useAPI if true use API if not use mocked data 
- * @returns mainData of user either via API or mocked data, if coming from API they are formated 
+ *
+ * @param {number} userId used in url to specify from which user we want data
+ * @param {boolean} useAPI if true use API if not use mocked data
+ * @returns mainData of user either via API or mocked data, if coming from API they are formated
  */
 
 export async function getMainData(userId, useAPI) {
   if (useAPI === true) {
     const mainData = await fetchData(`http://localhost:3000/user/${userId}`)
-    const newMainData = UserMainData(mainData.id, mainData.userInfos.firstName, mainData.userInfos.lastName, mainData.userInfos.age, mainData.score, mainData.keyData.calorieCount, mainData.keyData.proteinCount, mainData.keyData.carbohydrateCount, mainData.keyData.lipidCount)
-    return newMainData
+    return mainData
   }
   const mainData = USER_MAIN_DATA.filter((element) => element.id === parseInt(userId))[0]
   return mainData
 }
 
 /**
- * 
- * @param {number} userId used in url to specify from which user we want data 
- * @param {boolean} useAPI if true use API if not use mocked data 
- * @returns activityData of user either via API or mocked data, if coming from API they are formated 
+ *
+ * @param {number} userId used in url to specify from which user we want data
+ * @param {boolean} useAPI if true use API if not use mocked data
+ * @returns activityData of user either via API or mocked data, if coming from API they are formated
  */
 
 export async function getActivityData(userId, useAPI) {
@@ -47,10 +45,10 @@ export async function getActivityData(userId, useAPI) {
 }
 
 /**
- * 
- * @param {number} userId used in url to specify from which user we want data 
- * @param {boolean} useAPI if true use API if not use mocked data 
- * @returns sessionData of user either via API or mocked data, if coming from API they are formated 
+ *
+ * @param {number} userId used in url to specify from which user we want data
+ * @param {boolean} useAPI if true use API if not use mocked data
+ * @returns sessionData of user either via API or mocked data, if coming from API they are formated
  */
 
 export async function getSessionData(userId, useAPI) {
@@ -63,17 +61,16 @@ export async function getSessionData(userId, useAPI) {
 }
 
 /**
- * 
- * @param {number} userId used in url to specify from which user we want data 
- * @param {boolean} useAPI if true use API if not use mocked data 
- * @returns performanceData of user either via API or mocked data, if coming from API they are formated 
+ *
+ * @param {number} userId used in url to specify from which user we want data
+ * @param {boolean} useAPI if true use API if not use mocked data
+ * @returns performanceData of user either via API or mocked data, if coming from API they are formated
  */
 
 export async function getPerformanceData(userId, useAPI) {
   if (useAPI === true) {
     const performanceData = await fetchData(`http://localhost:3000/user/${userId}/performance`)
-    const newPerformanceData = formatedPerformanceData(performanceData)
-    return newPerformanceData
+    return performanceData
   }
   const performanceData = USER_PERFORMANCE.filter((element) => element.userId === parseInt(userId))[0]
   return performanceData
