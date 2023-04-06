@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom'
 import React from 'react'
 import '../../styles/error.css'
 
+/**
+ * 
+ * @returns {React.Component} erreur page
+ */
+
 function Error() {
 
   return (

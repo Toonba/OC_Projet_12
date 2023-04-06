@@ -4,6 +4,11 @@ import velo from '../../assets/velo.png'
 import halter from '../../assets/haltere.png'
 import '../../styles/footer.css'
 
+/**
+ * 
+ * @returns {React.Component} with several logo and copyright text
+ */
+
 function Footer() {
   return (
     <footer>

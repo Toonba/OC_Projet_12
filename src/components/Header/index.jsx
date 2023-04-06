@@ -2,6 +2,11 @@ import logo from '../../assets/logo.png'
 import { Link } from 'react-router-dom'
 import '../../styles/header.css'
 
+/**
+ * 
+ * @returns {React.Component} Header containing Logo and navbar 
+ */
+
 function Header() {
   return (
     <header>

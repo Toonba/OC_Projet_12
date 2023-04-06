@@ -1,5 +1,3 @@
-import { getNextKeyDef } from '@testing-library/user-event/dist/keyboard/getNextKeyDef'
-
 export function formatedMainData(mainData) {
   const newMainData = {
     id: mainData.id,
@@ -58,4 +56,58 @@ export function formatedPerformanceData(performanceData) {
     ]
   }
   return newPerformanceData
+}
+
+/**
+ * Represents the main data of a user.
+ * Creates a new instance of UserMainData.
+ * @param {object} mainData - user's main data
+ * @param {object} activityData - user's activity data (weight and calories burnt)
+ * @param {object} sessionData - user's session data (lenght of training session)
+ * @param {object} performanceData - user's performance data (user's score for each skills)
+ */
+
+export class User {
+  constructor(mainData, activityData, sessionData, performanceData) {
+    this.mainData = mainData
+    this.activityData = activityData
+    this.sessionData = sessionData
+    this.performanceData = performanceData
+  }
+
+  getFirstName() {
+    return this.mainData.userInfos.firstName
+  }
+
+  getKeyData() {
+    return this.mainData.keyData
+  }
+
+  getActivityData() {
+    return this.activityData.sessions
+  }
+
+  getTrainingData() {
+    return this.sessionData.sessions
+  }
+
+  getPerformanceData() {
+    let performance = {
+      kind: {
+        1: 'Cardio',
+        2: 'Energie',
+        3: 'Endurance',
+        4: 'Force',
+        5: 'Vitesse',
+        6: 'Intensité'
+      },
+      data: this.performanceData.data
+    }
+    return performance
+  }
+
+  getScore() {
+    let score = this.mainData.todayScore ? this.mainData.todayScore : this.mainData.score
+    return score
+  }
 }

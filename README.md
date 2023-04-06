@@ -11,7 +11,7 @@ To start this project, you must launch the back-end first, and the front-end.
 
 ## Getting started
 
-- Clone this repository [Repository Back-end](https://github.com/Toonba/OC_Projet_12)
+- Clone this repository [Project Repository](https://github.com/Toonba/OC_Projet_12)
 
 ## Back-end
 

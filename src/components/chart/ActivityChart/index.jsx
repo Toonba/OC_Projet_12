@@ -1,11 +1,13 @@
-import { BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Bar } from 'recharts'
+import { BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Bar, ResponsiveContainer } from 'recharts'
 import CustomToolTip from './tooltip'
 import '../../../styles/activityChart.css'
 import PropTypes from 'prop-types'
+import React from 'react'
 
 /**
+ *
  * @param {object} data activity data of user
- * @return {reactElement} barChart of daily activity
+ * @return {React.Component} barChart of user's daily activities and weight
  */
 function ActivityChart({ data }) {
   const userData = data
@@ -25,35 +27,36 @@ function ActivityChart({ data }) {
           </div>
         </div>
       </div>
-      <BarChart
-        barGap={8}
-        width={840}
-        height={300}
-        data={userData.sessions}
-        margin={{
-          top: 100,
-          right: 30,
-          left: 40,
-          bottom: 5
-        }}>
-        <CartesianGrid strokeDasharray="3 3" vertical={false} />
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          barGap={8}
+          width={840}
+          height={300}
+          data={userData.sessions}
+          margin={{
+            top: 100,
+            right: 30,
+            left: 40,
+            bottom: 5
+          }}>
+          <CartesianGrid strokeDasharray="3 3" vertical={false} />
 
-        <XAxis dataKey="day" tickFormatter={(day) => new Date(day).getDate()} tickLine={false} tick={{ fill: '#9B9EAC' }} padding={{ left: -47, right: -48 }} domain={['dataMin', 'dataMax']} tickMargin={10} />
+          <XAxis dataKey="day" tickFormatter={(day) => new Date(day).getDate()} tickLine={false} tick={{ fill: '#9B9EAC' }} padding={{ left: -47, right: -48 }} domain={['dataMin', 'dataMax']} tickMargin={10} />
 
-        <YAxis dataKey="kilogram" yAxisId="kilogram" orientation="right" tickLine={false} tick={{ fill: '#9B9EAC' }} axisLine={false} tickMargin={30} domain={['dataMin-2', 'dataMax+2']} tickCount={4} />
+          <YAxis dataKey="kilogram" yAxisId="kilogram" orientation="right" tickLine={false} tick={{ fill: '#9B9EAC' }} axisLine={false} tickMargin={30} domain={['dataMin-2', 'dataMax+2']} tickCount={4} />
 
-        <YAxis hide dataKey="calories" yAxisId="calories" orientation="right" domain={[0, 'dataMax+5']} />
+          <YAxis hide dataKey="calories" yAxisId="calories" orientation="right" domain={[0, 'dataMax+5']} />
 
-        <Tooltip content={<CustomToolTip />} wrapperStyle={{ backgroundColor: '#FFF', boxShadow: 'none', margin: '0 20px' }} />
+          <Tooltip content={<CustomToolTip />} wrapperStyle={{ backgroundColor: '#FFF', boxShadow: 'none', margin: '0 20px' }} />
 
-        <Bar dataKey="kilogram" yAxisId={'kilogram'} fill="#282D30" barSize={7} radius={[3.5, 3.5, 0, 0]} />
+          <Bar dataKey="kilogram" yAxisId={'kilogram'} fill="#282D30" barSize={7} radius={[3.5, 3.5, 0, 0]} />
 
-        <Bar dataKey="calories" yAxisId={'calories'} fill="#E60000" barSize={7} radius={[3.5, 3.5, 0, 0]} />
-      </BarChart>
+          <Bar dataKey="calories" yAxisId={'calories'} fill="#E60000" barSize={7} radius={[3.5, 3.5, 0, 0]} />
+        </BarChart>
+      </ResponsiveContainer>
     </aside>
   )
 }
-
 
 ActivityChart.propTypes = {
   data: PropTypes.object.isRequired

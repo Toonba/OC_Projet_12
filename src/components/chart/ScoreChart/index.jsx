@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell } from 'recharts'
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 import '../../../styles/scoreChart.css'
 import PropTypes from 'prop-types'
 
@@ -26,13 +26,15 @@ function ScoreChart({ data }) {
           de votre <br /> obectif
         </p>
       </div>
-      <PieChart width={250} height={230} margin={{ top: 60, right: 25, bottom: 0, left: 30 }}>
-        <Pie data={scoreData} startAngle={90} endAngle={450} innerRadius={88} outerRadius={100} cornerRadius={10} dataKey="value">
-          <Cell fill={'#e60000'} />
-          <Cell fill={'transparent'} stroke={'transparent'} />
-        </Pie>
-        <Pie outerRadius={85} fill={'#FFFFFF'} data={[{ name: 'background', value: 100 }]} dataKey="value" />
-      </PieChart>
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart>
+          <Pie data={scoreData} startAngle={90} endAngle={450} innerRadius={20} outerRadius={63} cornerRadius={10} dataKey="value">
+            <Cell fill={'#e60000'} />
+            <Cell fill={'transparent'} stroke={'transparent'} />
+          </Pie>
+          <Pie outerRadius={50} fill={'#FFFFFF'} data={[{ name: 'background', value: 100 }]} dataKey="value" />
+        </PieChart>
+      </ResponsiveContainer>
     </aside>
   )
 }

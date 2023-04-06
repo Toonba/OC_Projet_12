@@ -1,5 +1,12 @@
 import PropTypes from 'prop-types'
 
+/**
+ * 
+ * @param {boolean} active show or hide tooltip
+ * @param {array} payload source data
+ * @returns custom rendering of tooltip
+ */
+
 function CustomToolTip({ active, payload }) {
   if (active) {
     return (

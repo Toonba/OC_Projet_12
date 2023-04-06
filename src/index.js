@@ -8,6 +8,10 @@ import Dashboard from './page/Dashboard'
 import Home from './page/Home'
 import Error from './page/Error'
 
+/**
+ * @return Routes path to reach the different part of our app
+ */
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>

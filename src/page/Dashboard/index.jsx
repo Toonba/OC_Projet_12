@@ -9,6 +9,11 @@ import PerformanceChart from '../../components/chart/PerformanceChart'
 import ScoreChart from '../../components/chart/ScoreChart'
 import { getMainData, getActivityData, getSessionData, getPerformanceData } from '../../service/fetch'
 
+/**
+ * 
+ * @returns {React.Component} dashboard with user's data
+ */
+
 function Dashboard() {
   const { id } = useParams()
   const [data, setData] = useState(null)
@@ -16,6 +21,7 @@ function Dashboard() {
   const useAPI = true
 
   useEffect(() => {
+    // Retrieve data from API or mocked-data depending of useApi value
     async function fetchData() {
       const mainData = await getMainData(id, useAPI)
       const activtyData = await getActivityData(id, useAPI)

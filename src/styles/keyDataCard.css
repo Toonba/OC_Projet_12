@@ -1,14 +1,15 @@
 .keyData {
+  width: 30%;
 }
 
 .keyDataCard {
   display: flex;
   align-items: center;
   column-gap: 25px;
-  padding: 20px;
+  padding: 10px;
   background-color: #fbfbfb;
-  margin: 0 40px 40px ; 
-  width: 200px;
+  margin: 0 40px 40px;
+  width: 80%;
 }
 
 .keyDataCard img {
@@ -17,12 +18,12 @@
 
 .keyDataCard p {
   margin: 2px;
-  font-size: 14px;
+  font-size: 12px;
   color: #74798c;
 }
 
 .keyDataCard .count {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   color: black;
 }
