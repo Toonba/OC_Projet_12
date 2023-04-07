@@ -15,7 +15,7 @@ import Error from './page/Error'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <Router>
+    <Router basename="/OC_Projet_12">
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
