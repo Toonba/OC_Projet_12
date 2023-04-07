@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 import '../../../styles/scoreChart.css'
 import PropTypes from 'prop-types'

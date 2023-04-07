@@ -6,7 +6,7 @@ import React from 'react'
 
 /**
  *
- * @param {Array} data user's calorie burnt and user's weight for each day 
+ * @param {Array} data user's calorie burnt and user's weight for each day
  * @return {React.Component} barChart of user's daily calories burnt and weight
  */
 function ActivityChart({ data }) {
