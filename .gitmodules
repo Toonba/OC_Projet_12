@@ -1,0 +1,3 @@
+[submodule "backend/P9-front-end-dashboard"]
+	path = backend/P9-front-end-dashboard
+	url = https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git
