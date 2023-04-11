@@ -43,23 +43,26 @@ export class User {
 
     for (const value in data) {
       //convert original number in US format (ie 1000 = 1,000)
-      count = `${new Intl.NumberFormat('en-US').format(data[value])}kCal`
       // link each type of nutriment to logo and name
       switch (value) {
         case 'calorieCount':
           logo = calories
+          count = `${new Intl.NumberFormat('en-US').format(data[value])}kCal`
           countName = 'Calories'
           break
         case 'proteinCount':
           logo = protein
+          count = `${new Intl.NumberFormat('en-US').format(data[value])}g`
           countName = 'Proteines'
           break
         case 'carbohydrateCount':
           logo = carbs
+          count = `${new Intl.NumberFormat('en-US').format(data[value])}g`
           countName = 'Glucides'
           break
         case 'lipidCount':
           logo = fat
+          count = `${new Intl.NumberFormat('en-US').format(data[value])}g`
           countName = 'Lipides'
           break
         default:
@@ -96,7 +99,7 @@ export class User {
     const dayOfWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' }
     let sessions = []
     for (let session of this.sessionData.sessions) {
-      // convert each day from number to letter 
+      // convert each day from number to letter
       sessions.push({ day: dayOfWeek[session.day], sessionLength: session.sessionLength })
     }
     return sessions
@@ -110,7 +113,7 @@ export class User {
   getPerformanceData() {
     const kind = this.performanceData.kind
     for (const value in kind) {
-      // transalte each kind in French 
+      // transalte each kind in French
       switch (kind[value]) {
         case 'cardio':
           kind[value] = 'Cardio'

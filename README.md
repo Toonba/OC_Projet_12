@@ -15,6 +15,13 @@ To start this project, you must launch the back-end first, and the front-end.
 
 ## Back-end
 
+### Prerequisites
+NodeJS (version 12.18)
+Yarn
+
+If you are working with several versions of NodeJS, we recommend you install nvm. This tool will allow you to easily manage your NodeJS versions.
+
+### Instalation
 - Enter backend directory with command
 
 ```sh

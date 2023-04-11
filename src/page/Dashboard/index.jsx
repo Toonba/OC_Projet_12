@@ -19,7 +19,11 @@ function Dashboard() {
   const { id } = useParams()
   const [data, setData] = useState(null)
   // set useAPI to false if you want to use mocked data
-  const useAPI = false
+  const [useAPI, setUseAPI] = useState(true);
+
+  function handleButtonClick() {
+    setUseAPI(false);
+  }
 
   useEffect(() => {
     // Retrieve data from API or mocked-data depending of useApi value
@@ -35,7 +39,11 @@ function Dashboard() {
   }, [id, useAPI])
 
   if (!data) {
-    return <div>Loading...</div>
+    return (
+      <div className="erreurAPI">
+        L'API n'est pas disponible<button onClick={handleButtonClick}>utilisé les données pré-enregistré</button>
+      </div>
+    )
   }
 
   return (

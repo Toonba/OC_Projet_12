@@ -31,3 +31,11 @@
   column-gap: 5px;
   row-gap: 20px;
 }
+
+.erreurAPI {
+  margin-top: 10px;
+  margin-left: 200px;
+}
+.erreurAPI button {
+  margin-left: 10px;
+}

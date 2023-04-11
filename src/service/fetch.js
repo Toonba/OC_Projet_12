@@ -7,9 +7,14 @@ import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE 
  */
 
 export async function fetchData(url) {
-  const response = await fetch(url)
-  const data = await response.json()
-  return data.data
+  try {
+    const response = await fetch(url)
+    const data = await response.json()
+    return data.data
+  } catch (error) {
+    console.log('Error fetching data:', error)
+    throw error
+  }
 }
 
 /**
